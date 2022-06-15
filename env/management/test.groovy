@@ -1,5 +1,5 @@
     folder('OKTS')
-folder('Infra')
+folder('OKTS/Infra')
 
 def NETWORKJOB = multibranchPipelineJob('OKTS/Infra/NETWORKJOB')
 NETWORKJOB.with {
