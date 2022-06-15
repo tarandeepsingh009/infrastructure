@@ -1,3 +1,4 @@
+Folder('OKTS')
 folder ('OKTS/INFRA')
 pipelineJob('OKTS/INFRA/INFRAJOB') {
     parameters {
