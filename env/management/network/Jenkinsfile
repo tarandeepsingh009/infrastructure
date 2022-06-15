@@ -1,7 +1,14 @@
 pipeline {
     agent any
+
+    environment {
+        network = "$value"
+    }
 stages {
     stage('Network') {
+        when {
+            environment(name: "network", value: "true")
+        }
         steps{
           dir ('env/management/network') {
               sh 'terraform init'
