@@ -5,7 +5,6 @@ pipelineJob('INFRA/SingleNetworkSetupJob') {
         choiceParam('Openvpn', ['True', 'False'])
         choiceParam('ALB', ['True', 'False'])
         choiceParam('BP', ['True', 'False'])
-        choiceParam('EKS', ['True', 'False'])
     }
     definition {
         cpsScm {
