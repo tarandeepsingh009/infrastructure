@@ -24,7 +24,6 @@ pipeline {
                         }
                 }
             }
-        }
         stage ('Openvpn') {
             when {
                 expression {
@@ -88,5 +87,6 @@ pipeline {
                           sh 'terraform apply'
                 }
             }
+}
 }
 }
