@@ -46,7 +46,7 @@ pipeline {
                 }
             }
             steps {
-                dir('env/management/interal_alb') {
+                dir('env/management/internal_alb') {
                     sh 'export AWS_ACCESS_KEY="$AWS_ACCESS_KEY_ID"'
                     sh 'export AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY"'
                     sh ' export AWS_REGION=ap-south-1'
@@ -63,7 +63,24 @@ pipeline {
                 }
             }
             steps {
-                dir('env/management/Buildpiper') {
+                dir('env/management/buildpiper') {
+                    sh 'export AWS_ACCESS_KEY="$AWS_ACCESS_KEY_ID"'
+                    sh 'export AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY"'
+                    sh ' export AWS_REGION=ap-south-1'
+                    sh 'terraform init'
+                    sh 'terraform validate'
+                    sh 'terraform plan'
+                }
+            }
+}
+       stage ('EKS') {
+           when {
+                expression {
+                    BP == 'True'
+                }
+            }
+            steps {
+                dir('env/management/EKS') {
                     sh 'export AWS_ACCESS_KEY="$AWS_ACCESS_KEY_ID"'
                     sh 'export AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY"'
                     sh ' export AWS_REGION=ap-south-1'
