@@ -1,5 +1,3 @@
-aws_access_key  = AKIAWQ2D7JI4SOJHSM76
-aws_secret_key  = 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
 vpc_name             = "management-vpc"
 igw_name             = "management-igw"
 pub_rt_name          = "management-pub"
