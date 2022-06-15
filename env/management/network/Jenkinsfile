@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+stages {
+    stage('Network') {
+        steps{
+            sh 'terraform init'
+            sh 'terraform validate'
+            sh 'terraform fmt'
+            sh 'terraform plan'
+            sh 'terraform apply'
+        }
+    }
+}
+}
