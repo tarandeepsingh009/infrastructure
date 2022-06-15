@@ -19,7 +19,7 @@ pipelineJob('OKTS/INFRA/INFRAJOB') {
                         }
                     }
                 }
-            scriptPath('env/management/network/Jenkinsfile')
+            scriptPath('env/management/Jenkinsfile')
         }
     }
 }
