@@ -10,7 +10,7 @@ INFRAJOB.with {
                     git{
                         id('02')
                         remote('https://gitlab.com/ot-client/central-team/ot-orchid-international/infrastructure.git')
-		                credentialsId('opstree')
+		                credentialsId('a7090023-82ec-41cf-b990-166c0515a968')
                     }
                 }
                 strategy {
