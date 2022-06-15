@@ -1,8 +1,10 @@
 pipeline {
     agent any
+    def dirpath = "env/management/network/"
 stages {
     stage('Network') {
         steps{
+            sh 'cd env/management/network'
             sh 'terraform init'
             sh 'terraform validate'
             sh 'terraform fmt'
