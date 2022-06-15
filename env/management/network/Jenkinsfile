@@ -68,20 +68,5 @@ pipeline {
                 }
             }
 }
-        stage ('EKS') {
-           when {
-                expression {
-                    EKS == 'True'
-                }
-            }
-            steps {
-                dir('env/management/EKS') {
-                    sh 'terraform init'
-                          sh 'terraform plan'
-                          sh 'terraform validate'
-                          sh 'terraform plan'
-                }
-            }
-}
 }
 }
