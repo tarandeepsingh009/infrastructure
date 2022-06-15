@@ -3,12 +3,13 @@ pipeline {
 stages {
     stage('Network') {
         steps{
-            sh 'cd env/management/network'
-            sh 'terraform init'
-            sh 'terraform validate'
-            sh 'terraform fmt'
-            sh 'terraform plan'
-            sh 'terraform apply'
+          dir ('env/management/network') {
+              sh 'terraform init'
+              sh 'terraform plan'
+              sh 'terraform validate'
+              sh 'terraform plan'
+              sh 'terraform apply'
+          }
         }
     }
 }
