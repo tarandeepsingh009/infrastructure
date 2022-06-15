@@ -1,4 +1,4 @@
-    folder('OKTS')
+folder('OKTS')
 folder('OKTS/Infra')
 
 def NETWORKJOB = multibranchPipelineJob('OKTS/Infra/NETWORKJOB')
