@@ -76,7 +76,7 @@ pipeline {
        stage ('EKS') {
            when {
                 expression {
-                    BP == 'True'
+                    EKS == 'True'
                 }
             }
             steps {
