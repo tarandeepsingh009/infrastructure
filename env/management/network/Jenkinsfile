@@ -2,8 +2,9 @@ pipeline {
     agent any
 
     environment {
-        network = "$value"
+        network = false
     }
+
 stages {
     stage('Network') {
         when {
