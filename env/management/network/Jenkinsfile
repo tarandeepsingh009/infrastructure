@@ -1,5 +1,9 @@
 pipeline {
     agent any
+                   environment {
+                       AWS_ACCESS_KEY_ID = credentials('AWS')
+                       AWS_SECRET_ACCESS_KEY = credentials('AWS')
+                    }
         stages {
             stage ('Network') {
                 when {
@@ -7,10 +11,6 @@ pipeline {
                         Network == 'True'
                     }
                 }
-                   environment {
-                       AWS_ACCESS_KEY_ID = credentials('AWS')
-                       AWS_SECRET_ACCESS_KEY = credentials('AWS')
-                    }
                 steps {
                      dir ('env/management/network') {
                          sh 'export AWS_ACCESS_KEY="$AWS_ACCESS_KEY_ID"'
@@ -25,4 +25,68 @@ pipeline {
                 }
             }
         }
+        stage ('Openvpn') {
+            when {
+                expression {
+                    Openvpn == 'True'
+                }
+            }
+            steps {
+                dir('env/management/openvpn') {
+                    sh 'terraform init'
+                          sh 'terraform plan'
+                          sh 'terraform validate'
+                          sh 'terraform plan'
+                          sh 'terraform apply'
+                }
+            }
+        }
+        stage ('internal_alb') {
+            when {
+                expression {
+                    ALB == 'True'
+                }
+            }
+            steps {
+                dir('env/management/interal_alb') {
+                    sh 'terraform init'
+                          sh 'terraform plan'
+                          sh 'terraform validate'
+                          sh 'terraform plan'
+                          sh 'terraform apply'
+                }
+            }
+        }
+        stage ('Buildpiper') {
+           when {
+                expression {
+                    BP == 'True'
+                }
+            }
+            steps {
+                dir('env/management/Buildpiper') {
+                    sh 'terraform init'
+                          sh 'terraform plan'
+                          sh 'terraform validate'
+                          sh 'terraform plan'
+                          sh 'terraform apply'
+                }
+            }
+}
+        stage ('EKS') {
+           when {
+                expression {
+                    EKS == 'True'
+                }
+            }
+            steps {
+                dir('env/management/EKS') {
+                    sh 'terraform init'
+                          sh 'terraform plan'
+                          sh 'terraform validate'
+                          sh 'terraform plan'
+                          sh 'terraform apply'
+                }
+            }
+}
 }
