@@ -1,10 +1,12 @@
 folder ('INFRA')
 pipelineJob('INFRA/SingleNetworkSetupJob') {
-choiceParam('Network', ['True', 'False'])
-choiceParam('Openvpn', ['True', 'False'])
-choiceParam('ALB', ['True', 'False'])
-choiceParam('BP', ['True', 'False'])
-choiceParam('EKS', ['True', 'False'])
+    parameters {
+        choiceParam('Network', ['True', 'False'])
+        choiceParam('Openvpn', ['True', 'False'])
+        choiceParam('ALB', ['True', 'False'])
+        choiceParam('BP', ['True', 'False'])
+        choiceParam('EKS', ['True', 'False'])
+    }
     definition {
         cpsScm {
                 scm {
