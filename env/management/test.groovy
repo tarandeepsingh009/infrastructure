@@ -1,5 +1,5 @@
-folder ('INFRA')
-pipelineJob('INFRA/SingleNetworkSetupJob') {
+folder ('OKTS/INFRA')
+pipelineJob('OKTS/INFRA/INFRAJOB') {
     parameters {
         choiceParam('Network', ['True', 'False'])
         choiceParam('Openvpn', ['True', 'False'])
@@ -14,7 +14,7 @@ pipelineJob('INFRA/SingleNetworkSetupJob') {
                         remote{
                             name('origin')
                             url('https://gitlab.com/ot-client/central-team/ot-orchid-international/infrastructure.git')
-                            credentials('opstree')
+                            credentials('a7090023-82ec-41cf-b990-166c0515a968')
                             branch('EKS')
                         }
                     }
