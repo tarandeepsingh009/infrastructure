@@ -1,8 +1,8 @@
 folder('OKTS')
 folder('OKTS/Infra')
 
-def NETWORKJOB = multibranchPipelineJob('OKTS/Infra/NETWORKJOB')
-NETWORKJOB.with {
+def INFRAJOB = multibranchPipelineJob('OKTS/Infra/INFRAJOB')
+INFRAJOB.with {
     description 'Job to setup Testing'
         branchSources {
             branchSource {
