@@ -1,6 +1,10 @@
 folder ('INFRA')
 pipelineJob('INFRA/SingleNetworkSetupJob') {
-  properties([parameters([choice(choices: ['True', 'False'], description: 'Do you want to Setup Network', name: 'Network'), choice(choices: ['True', 'False'], description: 'Do you want to setup Openvpn', name: 'Openvpn'), choice(choices: ['True', 'False'], description: 'Do you want to setup ALB', name: 'ALB'), choice(choices: ['True', 'False'], description: 'Do you want to setup BP', name: 'BP'), choice(choices: ['True', 'Flase'], description: 'Do you want to setup EKS Cluster', name: 'EKS')])])
+choiceParam('Network', ['True', 'False']),
+choiceParam('Openvpn', ['True', 'False']),
+choiceParam('ALB', ['True', 'False']),
+choiceParam('BP', ['True', 'False']),
+choiceParam('EKS', ['True', 'False'])
     definition {
         cpsScm {
                 scm {
