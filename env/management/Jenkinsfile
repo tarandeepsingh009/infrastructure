@@ -11,6 +11,7 @@ pipeline {
                     sh 'terraform -v'
                     sh 'docker version'
                     sh 'docker ps'
+                    sh 'docker pull hashicorp/terraform:1.2.2'
                 }
             }
             stage ('Network') {
