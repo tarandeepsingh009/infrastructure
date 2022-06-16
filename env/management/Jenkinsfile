@@ -13,9 +13,7 @@ pipeline {
                     }
                 }
                 steps {
-                     dir ('network') {
-                    task(network)
-                        }
+                    task('network')
                 }
             }
         stage ('Openvpn') {
@@ -25,9 +23,7 @@ pipeline {
                 }
             }
             steps {
-                dir('openvpn') {
-                    task(openvpn)
-                }
+                    task('openvpn')
             }
         }
         stage ('internal_alb') {
@@ -37,9 +33,7 @@ pipeline {
                 }
             }
             steps {
-                dir('internal_alb') {
-                    task(internal_alb)
-                }
+                    task('internal_alb')
             }
         }
         stage ('Buildpiper') {
@@ -49,9 +43,7 @@ pipeline {
                 }
             }
             steps {
-                dir('buildpiper') {
-                    task(buildpiper)
-                }
+                    task('buildpiper')
             }
 }
        stage ('EKS') {
@@ -61,10 +53,8 @@ pipeline {
                 }
             }
             steps {
-                dir('EKS') {
-                    task(EKS)
+                    task('EKS')
                 }
-            }
 }
 }
 }
