@@ -4,7 +4,18 @@ pipeline {
                        AWS_ACCESS_KEY_ID = credentials('AWS_ORCHID')
                        AWS_SECRET_ACCESS_KEY = credentials('AWS_ORCHID')
                     }
+
         stages {
+            stage ('TF_INSTALLATION') {
+                steps {
+
+                    sh 'sudo apt-get install wget unzip -y'
+                    sh 'sudo wget https://releases.hashicorp.com/terraform/1.1.8/terraform_1.1.8_linux_amd64.zip'
+                    sh 'sudo unzip terraform_1.1.8_linux_amd64.zip'
+                    sh 'sudo mv terraform /usr/local/bin/'
+                    sh 'terraform -v'
+                }
+            }
             stage ('Network') {
                 when {
                     expression {
