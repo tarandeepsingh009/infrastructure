@@ -20,7 +20,7 @@ pipeline {
                     }
                 }
                 steps {
-                     dir ('env/management/network') {
+                     dir ('network') {
                     task()
                         }
                 }
@@ -32,7 +32,7 @@ pipeline {
                 }
             }
             steps {
-                dir('env/management/openvpn') {
+                dir('openvpn') {
                     task()
                 }
             }
@@ -44,7 +44,7 @@ pipeline {
                 }
             }
             steps {
-                dir('env/management/internal_alb') {
+                dir('internal_alb') {
                     task()
                 }
             }
@@ -56,7 +56,7 @@ pipeline {
                 }
             }
             steps {
-                dir('env/management/buildpiper') {
+                dir('buildpiper') {
                     task()
                 }
             }
@@ -68,7 +68,7 @@ pipeline {
                 }
             }
             steps {
-                dir('env/management/EKS') {
+                dir('EKS') {
                     task()
                 }
             }
