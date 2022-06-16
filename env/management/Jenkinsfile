@@ -9,6 +9,7 @@ pipeline {
             stage ('TF_INSTALLATION') {
                 steps {
                     sh 'terraform -v'
+                    sh 'docker version'
                     sh 'sudo cat /etc/os-release'
                     sh 'sudo apt-get install wget unzip -y'
                     sh 'sudo wget https://releases.hashicorp.com/terraform/1.1.8/terraform_1.1.8_linux_amd64.zip'
