@@ -13,7 +13,7 @@ pipeline {
                     }
                 }
                 steps {
-                    task('network')
+                    task("${NETWORK_DIR}")
                 }
             }
         stage ('Openvpn') {
@@ -23,7 +23,7 @@ pipeline {
                 }
             }
             steps {
-                    task('openvpn')
+                    task("${OPENVPN_DIR}")
             }
         }
         stage ('internal_alb') {
@@ -33,7 +33,7 @@ pipeline {
                 }
             }
             steps {
-                    task('internal_alb')
+                    task("${ALB_DIR")
             }
         }
         stage ('Buildpiper') {
@@ -43,7 +43,7 @@ pipeline {
                 }
             }
             steps {
-                    task('buildpiper')
+                    task("${BP_DIR}")
             }
 }
        stage ('EKS') {
@@ -53,15 +53,14 @@ pipeline {
                 }
             }
             steps {
-                    task('EKS')
+                    task("${EKS_DIR}")
                 }
 }
 }
 }
 
 void task(workdir) {
-     sh 'docker run  --rm -v ${WORKSPACE}/env/management/${workdir}:/workdir -w /workdir  -e AWS_ACCESS_KEY=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY hashicorp/terraform:1.2.2 init'
-     echo 'docker run  --rm -v ${WORKSPACE}/env/management/${workdir}:/workdir -w /workdir  -e AWS_ACCESS_KEY=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY hashicorp/terraform:1.2.2 init'
-     sh 'docker run  --rm -v ${WORKSPACE}/env/management/${workdir}:/workdir -w /workdir  -e AWS_ACCESS_KEY=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY hashicorp/terraform:1.2.2 validate'
-     sh 'docker run  --rm -v ${WORKSPACE}/env/management/${workdir}:/workdir -w /workdir  -e AWS_ACCESS_KEY=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY hashicorp/terraform:1.2.2  plan'    
+     sh "docker run  --rm -v ${WORKSPACE}/${workdir}:/workdir -w /workdir  -e AWS_ACCESS_KEY=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY hashicorp/terraform:1.2.2 init"
+     sh "docker run  --rm -v ${WORKSPACE}/${workdir}:/workdir -w /workdir  -e AWS_ACCESS_KEY=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY hashicorp/terraform:1.2.2 validate"
+     sh "docker run  --rm -v ${WORKSPACE}/${workdir}:/workdir -w /workdir  -e AWS_ACCESS_KEY=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY hashicorp/terraform:1.2.2  plan" 
 }

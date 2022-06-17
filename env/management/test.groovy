@@ -7,6 +7,11 @@ pipelineJob('OKTS/INFRA/INFRAJOB') {
         choiceParam('ALB', ['True', 'False'], 'Do you want to setup  internal ALB')
         choiceParam('BP', ['True', 'False'], 'Do you want to Setup BP Server')
         choiceParam('EKS', ['True', 'False'], 'Do you want to setup EKS Cluster')
+        stringParam('NETWORK_DIR', ['env/managemet/network'], 'In which directory your network code')
+        stringParam('OPENVPN_DIR', ['env/managemet/openvpn'], 'In which directory your network code')
+        stringParam('ALB_DIR', ['env/managemet/internal_alb'], 'In which directory your network code')
+        stringParam('BP_DIR', ['env/managemet/buildpiper'], 'In which directory your network code')
+        stringParam('EKS_DIR', ['env/managemet/EKS'], 'In which directory your network code')
     }
     definition {
         cpsScm {
