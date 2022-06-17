@@ -8,7 +8,7 @@ pipeline {
         stages {
             stage ('git_clone') {
                 steps {
-            git branch: 'EKS', credentialsId: 'opstree', poll: false, url: 'https://gitlab.com/ot-client/central-team/ot-orchid-international/infrastructure.git'    
+            git branch: 'EKS', credentialsId: 'Sohan', poll: false, url: 'https://gitlab.com/ot-client/central-team/ot-orchid-international/infrastructure.git'    
                 }
             }
             stage ('Network') {
