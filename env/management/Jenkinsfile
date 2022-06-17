@@ -33,7 +33,7 @@ pipeline {
                 }
             }
             steps {
-                    task("${ALB_DIR")
+                    task("${ALB_DIR}")
             }
         }
         stage ('Buildpiper') {
