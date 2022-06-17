@@ -20,7 +20,7 @@ pipelineJob('OKTS/INFRA/INFRAJOB') {
                         remote{
                             name('origin')
                             url('https://gitlab.com/ot-client/central-team/ot-orchid-international/infrastructure.git')
-                            credentials('Sohan')
+                            credentials('oopstree')
                             branch('EKS')
                         }
                     }
