@@ -4,4 +4,5 @@ def terraformpipleline = new org.opstree.ci.terraformCI.buildPiperInfraSetup()
 
 node{
   terraformpipleline.call(configFilePath: "infrastructure/env/management/network/configuration")
+  terraformpipleline.networkinfra(configFilePath: "infrastructure/env/management/network/configuration")
 }
