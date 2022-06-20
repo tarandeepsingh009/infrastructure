@@ -7,5 +7,5 @@ node{
                        AWS_ACCESS_KEY_ID = credentials('AWS')
                        AWS_SECRET_ACCESS_KEY = credentials('AWS')
                 }                
-  terraformbuildpiper.call(configFilePath: "env/management/configuration",AWS_ACCESS_KEY_ID: "$AWS_ACCESS_KEY_ID", AWS_SECRET_ACCESS_KEY: "$AWS_SECRET_ACCESS_KEY")
+  terraformbuildpiper.call(configFilePath: "env/management/configuration")
 }
