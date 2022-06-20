@@ -3,11 +3,12 @@
 def terraformbuildpiper = new org.opstree.ci.terraformCI.buildPiperInfraSetup()
 
 node{
-    withCredentials([[
+withCredentials([[
     $class: 'AmazonWebServicesCredentialsBinding',
-    	credentialsId: 'AWS', 
-			accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
-			secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])  {
+    credentialsId: "AWS",
+    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+]]) {
       echo "this is ${env.AWS_ACCESS_KEY_ID}"
 echo "this is ${env.AWS_SECRET_ACCESS_KEY}"
       }  
