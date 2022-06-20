@@ -3,9 +3,12 @@
 def terraformbuildpiper = new org.opstree.ci.terraformCI.buildPiperInfraSetup()
 
 node{
-   environment {
-                       AWS_ACCESS_KEY_ID = credentials('AWS')
-                       AWS_SECRET_ACCESS_KEY = credentials('AWS')
-                }                
+     withCredentials([	usernamePassword(
+						credentialsId: 'AWS', 
+						usernameVariable: 'AWS_ACCESS_KEY_ID', 
+						passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+	echo "SOME_USERNAME ${AWS_ACCESS_KEY_ID}"
+	echo "SOME_PASSWORD ${AWS_SECRET_ACCESS_KEY}"
+  }               
   terraformbuildpiper.call(configFilePath: "env/management/configuration")
 }
