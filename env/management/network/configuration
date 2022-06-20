@@ -1,5 +1,5 @@
 CODE_BASE_PATH      = env/management/network/
-Infracost           = true
 Network             = true
+Infracost           = true
 ACTION_MESSAGE      = Network infrastructure
 KEEP_APPROVAL_STAGE = true
