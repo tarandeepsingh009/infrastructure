@@ -1,8 +1,7 @@
 @Library('opstree-library@buildpiper_infra')
 
-def terraformpipleline = new org.opstree.ci.terraformCI.buildPiperInfraSetup()
+def terraformbuildpiper = new org.opstree.ci.terraformCI.buildPiperInfraSetup()
 
 node{
-  terraformpipleline.call(configFilePath: "env/management/network/configuration")
-  terraformpipleline.networkinfra(configFilePath: "env/management/network/configuration")
+  terraformbuildpiper.call(configFilePath: "env/management/configuration")
 }
