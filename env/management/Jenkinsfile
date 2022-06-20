@@ -1,4 +1,4 @@
-@Library('infralibrary@buildpiper_infra')
+@Library('opstree-library@buildpiper_infra')
 
 def terraformpipleline = new org.opstree.ci.terraformCI.buildPiperInfraSetup()
 
