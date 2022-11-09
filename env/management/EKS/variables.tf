@@ -4,7 +4,7 @@ variable "region" {
 }
 variable "cluster_name" {
   type    = string
-  default = "orchid-staging-cluster"
+  default = "pinelabs-cluster"
 }
 variable "eks_cluster_version" {
   type    = string
@@ -28,7 +28,7 @@ variable "config_output_path" {
 
 variable "eks_node_group_name" {
   type    = string
-  default = "orchid-staging-ng"
+  default = "pinelabs-ng"
 }
 
 variable "create_node_group" {
@@ -47,7 +47,7 @@ variable "endpoint_public" {
 
 variable "ssh_key" {
   type    = string
-  default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCcsCTheIImAK9Tzi7Xj4l87pXo4i/fWBgEPVN13kvmzmBVsc3UiFl+KWJQx+GCTp+snoPOWS3uE4gMKIzRgxPcDPQALOKlZRu2GNauDiVEE58YwIWaidjngsTOq7kLgqmotAxOLkrT4cZVlvygpJLYMxYgtV6TXtsahTUeS7wfQOunb4PKwCY83O5RoA7fXt6tTHazdoDnbqKEQSmUcJ9P44od141eSCPkQQWtKdgLYFbeGsHk/WTdkS6oBAqIaisLpshiv76T+f3bPrJwUC2qXFvJ4aGt93n0e3cbJJbO1nM29vIMdIMC3Dsx2ijdwlYRSJ1GrMOYkSheK98SBrIwGhcoVhhSh3j/+GSecg0Sso/6oSb3nzZRNkSGJoXOMfFC7w3ilT1GDjcuAPIoOf7eXgx2t5f8fr2z48WdtNy9xNLMT8TXngzAWJol4N9kIkzfXbK2Ry9X2ht6KFqEM0aXeWADQevJ/Y3xamgDTon1biujlW0XTNLyit3FUfeijz0= opstree@opstree-Latitude-3420"
+  default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDCdyTGbPrkbHYOWBQd9qOKGoh2DRM0crNURmnOy+sOPBKaj37gUScS1H21P+ICuFxVLyinzBLAWw3qP7W7NTGCd8FTP9ZQfRlFVv4CkrZ8adjnr742kyh453Z4BNG7XQjcgfh7TmEtX9qYblxUzhWF0F03G3rATyPOcOkOasdgfLq3jhEfyok4eCdoAaf656lo2smHvd8Th50OLZ7Hi+KkbI5EssqEuu2lz0qJiiy1S+C9zFEcg5X43ZLv0WcTytOq2G0bVFx8YxaA5TKZ+32brOhFhLJ1qwzcX9OaLSZ3PeizFhZq3kx0hN8/RiHLbO+QmYJCcSjHndOHoFGub5biyvAY+PzbitsFjGmo7zJEyK09RMsmO+rgtot/GJ4e4qx6L2VkKAHQ7DYDw0ZTA0JXJnYXna7e5QJsxXuHofNkZPnPIQJ0tinRodIIWIPCxH3JmvNuPmebPwhe6I3DyQ/IrOTnYd2LYt7jNIdciviGWXkbjKdpbE1/5/w4nvSQFDE= opstree@opstree-Latitude-3420"
 }
 variable "security_group_ids" {
   type    = list(string)

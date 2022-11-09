@@ -26,7 +26,7 @@ resource "aws_key_pair" "eks-pem" {
   public_key = var.ssh_key
 }
 
-module "petpark_eks_cluster" {
+module "pinelabs_eks_cluster" {
   source              = "OT-CLOUD-KIT/eks/aws"
   cluster_name        = var.cluster_name
   eks_cluster_version = var.eks_cluster_version

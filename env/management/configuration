@@ -1,4 +1,0 @@
-Network = true
-CODE_BASE_PATH_NETWORK = env/management/network/
-Openvpn               = true
-Internal_ALB          = true

@@ -1,3 +1,0 @@
-CODE_BASE_PATH      = env/management/network/
-Infracost           = true
-ACTION_MESSAGE      = Network infrastructure

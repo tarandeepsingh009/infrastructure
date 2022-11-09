@@ -46,7 +46,7 @@ module "openvpn_security_group" {
           from_port    = 22
           to_port      = 22
           protocol     = "tcp"
-          cidr         = ["43.247.41.116/32"]
+          cidr         = ["103.69.244.145/32"]
           source_SG_ID = []
         }
       ]

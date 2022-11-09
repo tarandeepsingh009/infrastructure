@@ -31,9 +31,9 @@ module "internal_alb" {
   source                     = "OT-CLOUD-KIT/alb/aws"
   version                    = "0.0.4"
   alb_name                   = var.alb_name
-  internal                   = true
+  internal                   = false
   security_groups_id         = [module.internal_alb_security_group.sg_id]
-  subnets_id                 = [data.terraform_remote_state.network.outputs.pvt_subnet_ids[0][0], data.terraform_remote_state.network.outputs.pvt_subnet_ids[0][1]]
+  subnets_id                 = [data.terraform_remote_state.network.outputs.public_subnet_ids[0][0], data.terraform_remote_state.network.outputs.public_subnet_ids[0][1]]
   logs_bucket                = var.logs_bucket
   enable_logging             = var.enable_logging
   enable_deletion_protection = var.enable_deletion_protection
