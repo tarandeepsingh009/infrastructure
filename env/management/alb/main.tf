@@ -11,7 +11,7 @@ module "internal_alb_security_group" {
           from_port    = 80
           to_port      = 80
           protocol     = "tcp"
-          cidr         = ["10.10.0.93/32"]
+          cidr         = ["18.210.165.226/32"]
           source_SG_ID = [data.terraform_remote_state.openvpn.outputs.openvpn_sg_id]
         },
         {
@@ -19,7 +19,7 @@ module "internal_alb_security_group" {
           from_port    = 443
           to_port      = 443
           protocol     = "tcp"
-          cidr         = ["10.10.0.93/32"]
+          cidr         = ["18.210.165.226/32"]
           source_SG_ID = [data.terraform_remote_state.openvpn.outputs.openvpn_sg_id]
         }
       ]

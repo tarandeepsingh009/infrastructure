@@ -4,7 +4,7 @@ variable "region" {
 }
 variable "cluster_name" {
   type    = string
-  default = "pinelabs-cluster"
+  default = "Learningmate-cluster"
 }
 variable "eks_cluster_version" {
   type    = string
@@ -28,7 +28,7 @@ variable "config_output_path" {
 
 variable "eks_node_group_name" {
   type    = string
-  default = "pinelabs-ng"
+  default = "Learningmate-ng"
 }
 
 variable "create_node_group" {

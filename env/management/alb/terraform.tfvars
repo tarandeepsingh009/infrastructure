@@ -4,7 +4,7 @@ alb_name = "management-internal-alb"
 
 enable_deletion_protection = false
 
-logs_bucket = "orchid-alb-logs"
+logs_bucket = "learningmate-alb-logs"
 
 enable_logging = false
 

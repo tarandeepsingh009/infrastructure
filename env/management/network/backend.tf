@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "pinelabs-tf-state"
+    bucket = "Learningmate-tf-state"
     key    = "env/management/network.tfstate"
     region = "ap-south-1"
   }

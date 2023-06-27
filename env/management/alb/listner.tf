@@ -43,7 +43,7 @@ resource "aws_lb_listener_rule" "static" {
 
   condition {
     host_header {
-      values = ["buildpiper-api.test.com"]
+      values = ["buildpiper-api.learningmate.com"]
     }
   }
 }
@@ -58,7 +58,7 @@ resource "aws_alb_listener_rule" "static2" {
 
   condition {
     host_header {
-      values = ["buildpiper.test.com"]
+      values = ["buildpiper.learningmate.com"]
     }
   }
 }
